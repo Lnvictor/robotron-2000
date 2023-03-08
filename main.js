@@ -1,8 +1,12 @@
-const robotron = document.querySelector(".robotron");
-robotron.addEventListener("click", () => {
-    console.log('Bem vindo ao robotron 2000');
+const aumentar = document.querySelector("#aumentar");
+const diminuir = document.querySelector("#diminuir");
+const braco = document.querySelector("#braco");
+
+
+diminuir.addEventListener("click", () => {
+    braco.value = parseInt(braco.value) - 1;
 });
 
-function dizOi(){
-    console.log('oi');
-}
+aumentar.addEventListener("click", () => {
+    braco.value = parseInt(braco.value) + 1;
+});

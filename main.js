@@ -1,12 +1,8 @@
-const aumentar = document.querySelector("#aumentar");
-const diminuir = document.querySelector("#diminuir");
-const braco = document.querySelector("#braco");
+const controles = document.querySelectorAll(".controle-ajuste");
 
-
-diminuir.addEventListener("click", () => {
-    braco.value = parseInt(braco.value) - 1;
-});
-
-aumentar.addEventListener("click", () => {
-    braco.value = parseInt(braco.value) + 1;
+controles.forEach(element => {
+    element.onclick = (event) => {
+        var inputElement = element.parentElement.querySelector(".controle-contador");
+        inputElement.value = eval(`${parseInt(inputElement.value)} ${event.target.textContent} 1`);   
+    }
 });

@@ -1,8 +1,8 @@
-const controles = document.querySelectorAll(".controle-ajuste");
+const controles = document.querySelectorAll("[data-control]");
 
 controles.forEach(element => {
     element.onclick = (event) => {
-        var inputElement = element.parentElement.querySelector(".controle-contador");
-        inputElement.value = eval(`${parseInt(inputElement.value)} ${event.target.textContent} 1`);   
+        var inputElement = element.parentElement.querySelector("[data-counter]");
+        inputElement.value = eval(`${parseInt(inputElement.value)} ${event.target.dataset.control} 1`);   
     }
 });
